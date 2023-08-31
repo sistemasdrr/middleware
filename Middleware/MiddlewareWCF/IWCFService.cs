@@ -1,5 +1,6 @@
 ﻿using Middleware.Entities;
 using System.ServiceModel;
+using System.Threading.Tasks;
 
 namespace MiddlewareWCF
 {

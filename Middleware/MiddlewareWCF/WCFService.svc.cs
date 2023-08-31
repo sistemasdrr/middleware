@@ -1,5 +1,6 @@
 ﻿using Middleware.Business;
 using Middleware.Entities;
+using System.Threading.Tasks;
 
 namespace MiddlewareWCF
 {
@@ -8,10 +9,10 @@ namespace MiddlewareWCF
     public class WCFService : IWCFService
     {
         public NEmail email;
-        public Response SendMail(Request request)
+        public  Response SendMail(Request request)
         {
             email=new NEmail();
-            return email.SendEmail(request);  
+            return email.SendEmail(request).Result;  
         }
     }
 }

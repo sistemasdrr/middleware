@@ -1,5 +1,6 @@
 ﻿using Middleware.Entities;
 using Newtonsoft.Json;
+using System.Threading.Tasks;
 
 namespace Middleware.Data
 {
@@ -10,10 +11,10 @@ namespace Middleware.Data
         {
             client = new HttpRestClient();
         }
-        public Response SendEmail(Request request)
+        public async Task<Response> SendEmail(Request request)
         {           
             var json = JsonConvert.SerializeObject(request);
-            return JsonConvert.DeserializeObject<Response>(client.SendEmail(json));
+            return JsonConvert.DeserializeObject<Response>(await client.SendEmail(json));
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using Middleware.Data;
 using Middleware.Entities;
+using System.Threading.Tasks;
 
 namespace Middleware.Business
 {
@@ -10,9 +11,9 @@ namespace Middleware.Business
         {
             email = new DEmail();
         }
-        public Response SendEmail(Request request)
+        public async Task<Response> SendEmail(Request request)
         {
-            return email.SendEmail(request);
+            return await email.SendEmail(request);
         }
     }
 }
