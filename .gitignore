@@ -50,3 +50,15 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+/Middleware/packages/Newtonsoft.Json.13.0.3
+/Middleware/MiddlewareWCF/obj/Debug
+/Middleware/Middleware.Business/bin/Debug
+/Middleware/Middleware.Business/obj/Debug
+/Middleware/Middleware.Data/bin/Debug
+/Middleware/Middleware.Data/obj/Debug
+/Middleware/Middleware.Entities/obj/Debug
+/Middleware/MiddlewareWCF/bin
+/Middleware/.vs/Middleware
+/.vs/WCF/FileContentIndex
+/.vs/WCF/v17
+/.vs
