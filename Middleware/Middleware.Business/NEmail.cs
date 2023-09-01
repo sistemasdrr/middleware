@@ -11,6 +11,7 @@ namespace Middleware.Business
         {
             email = new DEmail();
         }
+       
         public async Task<Response> SendEmail(Request request)
         {
             return await email.SendEmail(request);

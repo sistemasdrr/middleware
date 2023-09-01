@@ -1,4 +1,5 @@
-﻿using System.Configuration;
+﻿using System;
+using System.Configuration;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,6 +17,7 @@ namespace Middleware.Data
             var url = ConfigurationManager.AppSettings["UriRestEmail"];
             using (var client=new HttpClient())
             {
+                client.Timeout=TimeSpan.FromMinutes(10);
                 var response = await client.PostAsync(url, data);
                 return await response.Content.ReadAsStringAsync();
             }

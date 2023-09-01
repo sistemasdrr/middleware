@@ -62,3 +62,10 @@ dkms.conf
 /.vs/WCF/FileContentIndex
 /.vs/WCF/v17
 /.vs
+/Middleware/Middleware.Business/bin/Release
+/Middleware/Middleware.Business/obj/Release
+/Middleware/Middleware.Data/bin/Release
+/Middleware/Middleware.Data/obj/Release
+/Middleware/Middleware.Entities/obj/Release
+/Middleware/MiddlewareWCF/obj/Release
+/Middleware/MiddlewareWCF/Properties/PublishProfiles
