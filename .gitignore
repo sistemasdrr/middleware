@@ -69,3 +69,4 @@ dkms.conf
 /Middleware/Middleware.Entities/obj/Release
 /Middleware/MiddlewareWCF/obj/Release
 /Middleware/MiddlewareWCF/Properties/PublishProfiles
+/ConsoleApp1/.vs/ConsoleApp1/v17/.suo

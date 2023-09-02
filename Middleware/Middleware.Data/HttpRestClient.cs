@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Configuration;
+using System.Data;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,11 +16,17 @@ namespace Middleware.Data
             var data = new StringContent(json, Encoding.UTF8, "application/json");
 
             var url = ConfigurationManager.AppSettings["UriRestEmail"];
-            using (var client=new HttpClient())
+            try
             {
-                client.Timeout=TimeSpan.FromMinutes(10);
-                var response = await client.PostAsync(url, data);
-                return await response.Content.ReadAsStringAsync();
+                using (var client = new HttpClient())
+                {
+                    client.Timeout = TimeSpan.FromMinutes(10);
+                    var response = await client.PostAsync(url, data);
+                    return await response.Content.ReadAsStringAsync();
+                }
+            }
+            catch(Exception ex) {
+                throw new Exception(ex.Message);
             }
           
         } 

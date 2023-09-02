@@ -1,5 +1,6 @@
 ﻿using Middleware.Business;
 using Middleware.Entities;
+using System;
 using System.Threading.Tasks;
 
 namespace MiddlewareWCF
@@ -11,8 +12,18 @@ namespace MiddlewareWCF
         public NEmail email;
         public  Response SendMail(Request request)
         {
-            email=new NEmail();
-            return email.SendEmail(request).Result;  
+            try
+            {
+                email = new NEmail();
+                return email.SendEmail(request).Result;
+            }
+            catch(Exception ex){
+                return new Response
+                {
+                    IsSuccess = false,
+                    Message = ex.Message,
+                };
+            }
         }
     }
 }
