@@ -10,6 +10,12 @@ namespace MiddlewareWCF
     public class WCFService : IWCFService
     {
         public NEmail email;
+
+        public string Get(string request)
+        {
+            return "hola : "+request;
+        }
+
         public  Response SendMail(Request request)
         {
             try

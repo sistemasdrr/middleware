@@ -10,5 +10,7 @@ namespace MiddlewareWCF
     {
         [OperationContract]
         Response SendMail(Request request);
+        [OperationContract]
+        string Get(string request);
     }
 }
