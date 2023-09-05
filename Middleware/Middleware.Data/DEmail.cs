@@ -14,10 +14,14 @@ namespace Middleware.Data
         }
         public async Task<Response> SendEmail(Request request)
         {
+            var response=new    Response();
             try
             {
                 var json = JsonConvert.SerializeObject(request);
-                return JsonConvert.DeserializeObject<Response>(await client.SendEmail(json));
+                string respuesta = await client.SendEmail(json);
+                response = JsonConvert.DeserializeObject<Response>(respuesta);
+                response.Message = respuesta;
+                return response;
             }
             catch (Exception ex)
             {
